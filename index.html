@@ -7,19 +7,65 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="app/css/style.css">
     <script src="app/lib/angular.min.js"></script>
-
     <title>Clash of Clans Rank</title>
 </head>
 
 <body>
     <div ng-controller="clashOfClansRank">
-        <button ng-click="getData()">Get Data</button>
+        <div class="app-container" ng-class="{showTable:table == true }">
+            <header class="header__container">
+                <h2>Veja o ranking Atual de Cada país</h2>
 
-        <ul>
-            <li ng-repeat="rank in rankings"> {{ rank.name }} </l1>    
-    </ul>
+                <select ng-model="country">
+                    <option value="none" selected>Selecione o país</option>
+                    <option value="32000038">Brasil</option>
+                    <option value="32000013">Angola</option>
+                    <option value="32000022">Austria</option>
+                    <option value="32000047">Canada</option>
+                    <option value="32000055">Chile</option>
+                    <option value="32000067">Cuba</option>
+                </select><br>
+
+                <button class="header__container__button" ng-click="showTable();getData();">Ver Ranking</button>
+            </header>
+            <div ng-show="loading" class="loading-container">
+                <img src="https://hosted.where2getit.com/benjerry/images/loading-icon.gif"/>
+            </div>
+            <div class="table-container">
+                <div ng-show="table" class="table-wrapper">
+                    <div class="table__header">
+                        <span>
+                            <strong>Rank</strong>
+                        </span>
+                        <span>
+                            <strong>Nome</strong>
+                        </span>
+                        <span>
+                            <strong>Clan Level</strong>
+                        </span>
+                        <span>
+                            <strong>Clan Points</strong>
+                        </span>
+                        <span>
+                            <strong>País</strong>
+                        </span>
+                    </div>
+
+                    <div ng-repeat="rank in rankings" class="table__row">
+                        <span>{{ rank.rank }}</span>
+                        <span>{{ rank.name }}</span>
+                        <span class="clan"><img class="clan_img" ng-src={{rank.badgeUrls.small}}> {{ rank.clanLevel }}</span>
+                        <span>{{ rank.clanPoints }}</span>
+                        <span>{{ rank.location.name }} </span>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
     </div>
-    <script  src="app/app.js"></script>
+    <script src="app/app.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
+
 </html>

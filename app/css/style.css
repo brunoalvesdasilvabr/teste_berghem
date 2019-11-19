@@ -1,0 +1,109 @@
+*{
+    margin:0;
+    padding:0;
+}
+.app-container{
+    background:url(../img/wp2273084.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    transition: all .5s;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+
+
+.showTable{
+    background-image: linear-gradient(to right bottom, rgba(12, 20, 18, 0.88),
+    rgba(17, 17, 17, 0.8)), url(../img/wp2273084.jpg) !important;
+    transition: all .5s;
+}
+
+
+
+.header__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 120px;
+    background-image: linear-gradient(to right bottom, rgba(12, 20, 18, 0.88),
+    rgba(17, 17, 17, 0.8))
+}
+.header__container h2{
+    color:white;
+    text-transform:capitalize;
+    font-family: sans-serif;
+}
+.header__container select{
+    width: 30%;
+    height: 32px;
+    font-size: 16px;
+}
+
+.header__container__button{
+    text-transform: uppercase;
+    padding: 8px 20px;
+    cursor: pointer;
+    background: transparent;
+    border: 5px solid #f4bb2a;
+    color: #f4bb2a;
+    transition: all .5s;
+    animation: gira .5s 1;
+}
+@keyframes gira{
+    0%{
+        transform: rotateX(0)
+    }
+    100%{
+        transform: rotateX(360deg)
+    }
+}
+
+.header__container__button:active{
+    transform:translateY(2px)
+}
+.table-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.table-container .table-wrapper{
+    border-top:1px solid whitesmoke;
+    border-right:1px solid whitesmoke;
+    width:80%;
+}
+.table__header{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    color:white;
+}
+.table__row{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    color:white;
+
+}
+
+.table-container .table-wrapper .table__header > span, .table-container .table-wrapper .table__row span{
+    padding:8px 4px;
+    border-left:1px solid whitesmoke;
+    border-bottom:1px solid whitesmoke;
+    text-align: center;
+}
+.clan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+.clan .clan_img{
+    width:20%    
+}
+.loading-container{
+    position: absolute;
+    top: 8%;
+    left: 35%;
+
+}
