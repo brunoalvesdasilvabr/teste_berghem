@@ -1,19 +1,14 @@
 # Titulo do Projeto
 
 Teste Front End Berghem
-## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prequisitos
 
 -Xampp
 
 
-
-
 ### Instalação
-
 
 -Adicione o projeto a pasta htdocs do Xampp
 
@@ -28,7 +23,7 @@ https://www.whatismyip.com/
 - entre em localhost/teste_berghem
 - caso a tabela não aparecer aperte VER RANKING mais uma vez
 
-## Built With
+## Construido com
 
 * [AngularJs]- The web framework used
 * [PHP]
