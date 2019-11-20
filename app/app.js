@@ -6,7 +6,7 @@ clashOfClansRank.controller('clashOfClansRank', ['$scope', function ($scope) {
 
     $scope.getData = function () {
         $scope.table = true;
-        loading = true
+        $scope.loading = true
         console.log($scope.country.id)
         axios('data_api/data_api.php', {
             //aqui eu passo o id do pais que veio pelo select
@@ -14,10 +14,10 @@ clashOfClansRank.controller('clashOfClansRank', ['$scope', function ($scope) {
                 country: $scope.country.id
             }
         }).then(function (response) {
+            $scope.loading = false
+
             $scope.rankings = response.data.items;
             $scope.$apply();
-            loading = false
-
             console.log($scope.rankings)
 
         })
