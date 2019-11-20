@@ -3,53 +3,50 @@ var clashOfClansRank = angular.module('clashOfClansRank', [])
 clashOfClansRank.controller('clashOfClansRank', ['$scope', function ($scope) {
     $scope.table = false;
     $scope.loading = false;
-    $scope.valor_selected ;//variavel que receberá o id do pais;
-    //Função que receberá os dados da api
+
     $scope.getData = function () {
+        $scope.table = true;
+        loading = true
         console.log($scope.country.id)
         axios('data_api/data_api.php', {
             //aqui eu passo o id do pais que veio pelo select
             params: {
                 country: $scope.country.id
             }
-        }).then(function(response){
+        }).then(function (response) {
             $scope.rankings = response.data.items;
-        $scope.$apply();
-        console.log($scope.rankings)
+            $scope.$apply();
+            loading = false
+
+            console.log($scope.rankings)
 
         })
         //variavel de resposta do php
-        
+
 
     }
 
     $scope.getCountry = function () {
-        $scope.countries = [];
-       axios('data_api/country_data.php')
-       .then(function(response){
-                //variavel de resposta do php 
-        let data = response.data.items;
 
-        data.forEach(function(country){
-            if(country.isCountry == true){
-                $scope.countries.push(country)  
-            }
-        })
-        $scope.$apply();
-       })
-   
-     return  $scope.countries
+        $scope.countries = [];
+        axios('data_api/country_data.php')
+            .then(function (response) {
+                //variavel de resposta do php 
+                let data = response.data.items;
+                //aqui eu faço um forEach em todos os paises que esta no raking
+                data.forEach(function (country) {
+                    if (country.isCountry == true) {
+                        $scope.countries.push(country)
+                    }
+                })
+                $scope.$apply();
+            })
+
+        return $scope.countries
 
     }
 
     $scope.getCountry();
-
-   
-
-
-    $scope.showTable = function () {
-        $scope.table = true;
-    }
 
 
 

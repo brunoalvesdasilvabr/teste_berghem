@@ -21,13 +21,13 @@
 
                 </select><br>
 
-                <button class="header__container__button" ng-click="showTable();getData();">Ver Ranking</button>
+                <button class="header__container__button" ng-click="getData();">Ver Ranking</button>
             </header>
             <div ng-show="loading" class="loading-container">
                 <img src="https://hosted.where2getit.com/benjerry/images/loading-icon.gif"/>
             </div>
-            <div class="table-container">
-                <div ng-show="table" class="table-wrapper">
+            <div ng-show="table"  class="table-container">
+                <div class="table-wrapper">
                     <div class="table__header">
                         <span>
                             <strong>Rank</strong>
