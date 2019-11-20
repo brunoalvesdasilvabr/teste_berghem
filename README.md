@@ -21,7 +21,6 @@ https://www.whatismyip.com/
 
 - adicione a api key na variavel $token em data_api/data_api.php
 - entre em localhost/teste_berghem
-- caso a tabela não aparecer aperte VER RANKING mais uma vez
 
 ## Construido com
 
