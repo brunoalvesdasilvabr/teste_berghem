@@ -17,14 +17,8 @@
             <header class="header__container">
                 <h2>Veja o ranking Atual de Cada país</h2>
 
-                <select ng-model="country">
-                    <option value="none" selected>Selecione o país</option>
-                    <option value="32000038">Brasil</option>
-                    <option value="32000013">Angola</option>
-                    <option value="32000022">Austria</option>
-                    <option value="32000047">Canada</option>
-                    <option value="32000055">Chile</option>
-                    <option value="32000067">Cuba</option>
+                <select  ng-model="country" ng-options="data.name for data in countries">
+
                 </select><br>
 
                 <button class="header__container__button" ng-click="showTable();getData();">Ver Ranking</button>
